@@ -37,14 +37,13 @@ def news():
         for article in news_articles:
             news_link = article['href']
             news_time = article.findChild('time')
-
-            time.sleep(10)
+            
             toaster.show_toast(title=article.text,
             msg=news_time.text,
             icon_path='C:\\Users\\madyf\\prog\\desktopNotif\\img\\news.ico',
             duration=None,
             threaded=True,
             callback_on_click=lambda : open_url('https://www.cbc.ca' + news_link))
+            time.sleep(10)
 
-
-news()
+    time.sleep(60*30)
